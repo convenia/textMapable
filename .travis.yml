@@ -1,0 +1,20 @@
+sudo: false
+
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+matrix:
+  include:
+    - php 7.1
+  fast_finish: true
+
+before_script:
+  - travis_retry composer-self-update
+  - travis_retry composer install --prefer-dist --no-interaction
+
+notifications:
+  script:
+    - "phpunit --process-isolation
