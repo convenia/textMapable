@@ -12,7 +12,7 @@ before_script:
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
-  - ./vendor/bin/php-cs-fixer --verbose --config-file=./.php_cs fix
+  - ./vendor/bin/php-cs-fixer fix src
 
 notifications:
   script:
