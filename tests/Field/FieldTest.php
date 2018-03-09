@@ -2,7 +2,6 @@
 
 namespace Convenia\TextMap\Tests\Field;
 
-
 use Convenia\TextMap\Tests\BaseTest;
 use Convenia\TextMap\Tests\Stubs\Field\FieldConcretClass;
 

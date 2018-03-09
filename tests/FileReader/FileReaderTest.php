@@ -24,6 +24,5 @@ class FileReaderTest extends BaseTest
     {
         $fileReader = (new FileReader())->read(__DIR__ . '/../Stubs/FileReader/reader_file_test.txt');
         $this->assertEquals(2, count($fileReader->getLines()));
-
     }
 }

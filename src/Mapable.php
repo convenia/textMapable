@@ -10,6 +10,10 @@ class Mapable
     protected $fileReader;
     protected $map = [];
 
+    public function getFields()
+    {
+        return $this->fields;
+    }
     /**
      * @param $fields
      * @return $this
@@ -18,7 +22,7 @@ class Mapable
     public function addField($fields)
     {
         if (is_array($fields)) {
-            $this->fields[] = array_merge($this->fields, $fields);
+            $this->fields = array_merge($this->fields, $fields);
 
             return $this;
         }
@@ -49,7 +53,7 @@ class Mapable
      */
     public function getMap()
     {
-        array_map('parseStringToMap', $this->fileReader->getLines());
+        array_map([$this, 'parseStringToMap'], $this->fileReader->getLines());
 
         return $this->map;
     }
@@ -59,7 +63,7 @@ class Mapable
      */
     private function parseStringToMap(string $line)
     {
-        foreach ($this->fields as $field) {
+        foreach ($this->getFields() as $field) {
             $this->map[$field->getName()] = $field
                 ->parseString($line)
                 ->getFormated();

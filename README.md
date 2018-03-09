@@ -1,5 +1,3 @@
-![logo](dominio-export.png)
-
 Biblioteca para ler arquivos de textos sem delimitadores físicos e retornar em formato legível
 
 [![Build Status](https://travis-ci.org/convenia/textMapable.svg?branch=master)](https://travis-ci.org/convenia/textMapable)

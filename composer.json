@@ -30,6 +30,12 @@
       "Convenia\\TextMap\\Tests\\": "tests/"
     }
   },
+  "scripts": {
+      "style-fixer": [
+        "./vendor/bin/php-cs-fixer fix src",
+        "./vendor/bin/php-cs-fixer fix tests"
+      ]
+  },
   "config": {
     "preferred-install": "dist"
   }
