@@ -2,7 +2,6 @@
 
 namespace Convenia\TextMap;
 
-
 use Convenia\TextMap\Exceptions\FileNotFoundException;
 
 class FileReader

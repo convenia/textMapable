@@ -17,7 +17,7 @@ class Mapable
      */
     public function addField($fields)
     {
-        if(is_array($fields)){
+        if (is_array($fields)) {
             $this->fields[] = array_merge($this->fields, $fields);
 
             return $this;
@@ -59,7 +59,7 @@ class Mapable
      */
     private function parseStringToMap(string $line)
     {
-        foreach($this->fields as $field) {
+        foreach ($this->fields as $field) {
             $this->map[$field->getName()] = $field
                 ->parseString($line)
                 ->getFormated();
