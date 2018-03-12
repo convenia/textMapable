@@ -10,6 +10,9 @@ class Mapable
     protected $fileReader;
     protected $map = [];
 
+    /**
+     * @return array
+     */
     public function getFields()
     {
         return $this->fields;
