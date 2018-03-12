@@ -25,7 +25,7 @@ class Mapable
     public function addField($fields)
     {
         if (is_array($fields)) {
-            array_map('validateFieldsInArray', $fields);
+            array_map([$this, 'validateFieldsInArray'], $fields);
             $this->fields = array_merge($this->fields, $fields);
 
             return $this;
