@@ -22,6 +22,7 @@ class Mapable
     public function addField($fields)
     {
         if (is_array($fields)) {
+            array_map('validateFieldsInArray', $fields);
             $this->fields = array_merge($this->fields, $fields);
 
             return $this;
@@ -68,5 +69,19 @@ class Mapable
                 ->parseString($line)
                 ->getFormated();
         }
+    }
+
+    /**
+     * @param $field
+     * @return mixed
+     * @throws FieldNotFoundException
+     */
+    private function validateFieldsInArray($field)
+    {
+        if ($field instanceof Field) {
+            return $field;
+        }
+
+        throw new FieldNotFoundException();
     }
 }
