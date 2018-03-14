@@ -68,8 +68,8 @@ class MapableTest extends BaseTest
         $map = $mapable->getMap();
 
         $this->assertEquals(2, count($map));
-        $this->assertArrayHasKey('bar', $map);
-        $this->assertArrayHasKey('foo', $map);
+        $this->assertArrayHasKey('bar', $map[0]);
+        $this->assertArrayHasKey('foo', $map[1]);
     }
 
     private function generateStubFields($times)
