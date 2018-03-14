@@ -67,7 +67,7 @@ class MapableTest extends BaseTest
         $mapable->addField($fields);
         $map = $mapable->getMap();
 
-        $this->assertEquals(count($fields), count($map));
+        $this->assertEquals(2, count($map));
         $this->assertArrayHasKey('bar', $map);
         $this->assertArrayHasKey('foo', $map);
     }

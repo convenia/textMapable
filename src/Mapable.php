@@ -67,11 +67,13 @@ class Mapable
      */
     private function parseStringToMap(string $line)
     {
+        $fields = [];
         foreach ($this->getFields() as $field) {
-            $this->map[$field->getName()] = $field
+            $fields[$field->getName()] = $field
                 ->parseString($line)
                 ->getFormated();
         }
+        $this->map[] = $fields;
     }
 
     /**
